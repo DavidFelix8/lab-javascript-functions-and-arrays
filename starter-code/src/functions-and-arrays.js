@@ -91,6 +91,17 @@ const wordsArr = [
   'palace'
 ];
 
+const averageWordLength = arrayWord => {
+  if (arrayWord.length === 0) {
+    return null;
+  }
+  let totalChar = 0;
+  for (let i = 0; i < arrayWord.length; i++) {
+    totalChar += arrayWord[i].length;
+  }
+  return totalChar / arrayWord.length;
+};
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
@@ -106,6 +117,20 @@ const wordsUnique = [
   'bring'
 ];
 
+const uniquifyArray = arrayWord => {
+  const arrayEmpty = [];
+  if (arrayWord.length === 0) {
+    return [];
+  }
+  let duplicates = [];
+  for (let i = 0; i < arrayWord.length; i++) {
+    if (duplicates.indexOf(arrayWord[i]) < 0) {
+      duplicates.push(arrayWord[i]);
+    }
+  }
+  return duplicates;
+};
+
 // Iteration #6: Find elements
 const wordsFind = [
   'machine',
@@ -117,6 +142,19 @@ const wordsFind = [
   'truth',
   'disobedience'
 ];
+
+const doesWordExist = (arrayWords, wordSearch) => {
+  if (arrayWords.length === 0) {
+    return false;
+  } else if (arrayWords.length === 1) {
+    return true;
+  }
+  if (arrayWords.includes(wordSearch)) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -133,6 +171,15 @@ const wordsCount = [
   'matter'
 ];
 
+const howManyTimes = (arrayWord, wordSearch) => {
+  let counter = 0;
+  for (let i = 0; i < arrayWord.length; i++) {
+    if (arrayWord[i] === wordSearch) {
+      counter++;
+    }
+  }
+  return counter;
+};
 // Iteration #8: Bonus
 
 const matrix = [
@@ -157,3 +204,7 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+const greatestProduct = matrix => {
+  let greatestProd;
+};
